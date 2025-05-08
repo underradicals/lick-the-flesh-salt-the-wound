@@ -1,0 +1,6 @@
+@Destiny2Viewer.Client.ControllerWebApi_HostAddress = http://localhost:5200
+
+GET {{Destiny2Viewer.Client.ControllerWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
