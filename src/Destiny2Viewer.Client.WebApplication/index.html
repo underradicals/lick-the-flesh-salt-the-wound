@@ -1,5 +1,5 @@
 <!doctype html>
-<html id="html" lang="en" dark-theme="dark">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,8 +11,10 @@
 <body>
   <div id="app">
     <header class="d2-header">
+      <h1 class="h1 d2-brand-name">Destiny2 App</h1>
+    </header>
+    <section class="animation d2-navbar-container">
       <nav class="d2-navbar">
-        <h1 class="h1 d2-brand-name">Destiny2 App</h1>
         <div class="d2-menubar">
           <ul class="main-menubar">
             <li>
@@ -25,14 +27,14 @@
               <a href="#">Contact</a>
             </li>
           </ul>
-          <ul>
+          <ul class="auth-menubar">
             <li>
               <button>Login</button>
             </li>
           </ul>
         </div>
       </nav>
-    </header>
+    </section>
     <div class="drop-down-menu-container">
       <button class="drop-down-menu-button" data-target="#ddm1">
         <span>
@@ -46,11 +48,11 @@
         </span>
       </button>
       <article id="ddm1" class="drop-down-menu">
-        <p data-target="html">Light</p>
-        <p data-target="html">Dark</p>
-        <p data-target="html">Midnight</p>
+        <p data-target="html" tabindex="0">Light</p>
+        <p data-target="html" tabindex="0">Dark</p>
+        <p data-target="html" tabindex="0">Midnight</p>
         <hr class="divide">
-        <p data-target="html">System</p>
+        <p data-target="html" tabindex="0">System</p>
       </article>
     </div>
   </div>

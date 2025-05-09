@@ -1,4 +1,11 @@
 import ColorThemeSwitch from './features/DropDownMenu/DropDownMenu';
+import { initializeTheme } from './features/utils';
 import './style.scss'
 
-ColorThemeSwitch(".drop-down-menu-button");
+export function OnLoad() {
+  initializeTheme();
+}
+
+addEventListener('DOMContentLoaded', OnLoad);
+
+ColorThemeSwitch(".drop-down-menu-button", ".drop-down-menu", true);

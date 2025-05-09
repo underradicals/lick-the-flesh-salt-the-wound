@@ -25,6 +25,7 @@
 
   /* Yellows */
   --color-yellow: #ffff00;
+  --color-yellow-900: #ffff00c4;
 
   --bs-color-white-10: rgba(238, 238, 238, 0.1);
   --bs-color-white-06: rgba(238, 238, 238, 0.06);
@@ -32,15 +33,28 @@
   --bs-color-dark-06: rgba(0, 0, 0, 0.06);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include props-mixin.theme-colors($theme: Dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include props-mixin.theme-colors($theme: Light);
+  }
+}
+
 /* -------------------------- Themes ------------------------------ */
-:root {
+
+html[data-theme="light"] {
   @include props-mixin.theme-colors($theme: Light);
 }
 
-[data-theme="dark"] {
+html[data-theme="dark"] {
   @include props-mixin.theme-colors($theme: Dark);
 }
 
-[data-theme="midnight"] {
+html[data-theme="midnight"] {
   @include props-mixin.theme-colors($theme: Midnight);
 }

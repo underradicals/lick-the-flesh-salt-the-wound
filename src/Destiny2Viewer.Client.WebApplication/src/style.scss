@@ -4,9 +4,6 @@
 /* -------------------------- Base Styles ------------------------------ */
 @use "./styles/main.css";
 
-
 /* -------------------------- Component Styles ------------------------------ */
 @use "./features/DropDownMenu/drop-down-menu.css";
-
-/* -------------------------- Prefers Color Scheme ------------------------------ */
-@use "./styles/prefers-color-scheme.scss";
+@use "./features/Header/header.scss";

@@ -16,7 +16,9 @@
   background-color: var(--bg-button-primary);
   color: var(--tc-primary-inverse);
 
-
+  &:hover {
+    background-color: var(--bg-button-primary-hover);
+  }
 
   span {
     display: table;
@@ -29,6 +31,14 @@
   }
 }
 
+.animation .drop-down-menu-button {
+  transition: background-color 0.2s ease-in;
+}
+
+.animation .chevron-entity {
+  transition: transform 0.3s ease-in-out;
+}
+
 .chevron-entity svg {
   --size: 15px;
   display: block;
@@ -38,6 +48,17 @@
   height: var(--size);
   transform: rotate(180deg);
   fill: var(--tc-primary-inverse);
+}
+
+@starting-style {
+  .drop-down-menu {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.animation .drop-down-menu {
+  transition: opacity 0.3s allow-discrete;
 }
 
 .drop-down-menu {
@@ -57,6 +78,11 @@
   }
 
   & p:hover {
+    background-color: var(--bg-primary-layer-one-hover);
+    color: var(--tc-primary-layer-one-hover);
+  }
+
+  & p:focus {
     background-color: var(--bg-primary-layer-one-hover);
     color: var(--tc-primary-layer-one-hover);
   }

@@ -1,4 +1,4 @@
-@mixin theme-colors($theme: Light) {
+@mixin theme-colors($theme) {
   @if ($theme == Light) {
     --bg-primary: var(--color-white-100);
     --bg-primary-layer-one: var(--color-white);
@@ -11,6 +11,7 @@
     --border-primary: var(--color-gray-200);
 
     --bg-button-primary: var(--color-blue-700);
+    --bg-button-primary-hover: var(--color-blue-600);
 
     --bs-small: var(--bs-color-dark-10) 0px 1px 3px 0px,
       var(--bs-color-dark-06) 0px 1px 2px 0px;
@@ -28,20 +29,27 @@
     --border-primary: var(--color-gray-100);
 
     --bg-button-primary: var(--color-yellow);
+    --bg-button-primary-hover: var(--color-yellow-900);
 
     --bs-small: var(--bs-color-white-10) 0px 1px 3px 0px,
       var(--bs-color-white-06) 0px 1px 2px 0px;
   }
 
   @if ($theme == Midnight) {
-    --bg-primary: var(--color-white-100);
-    --bg-primary-layer-one: var(--color-white);
-    --bg-primary-layer-one-hover: var(--color-blue-600);
+    --bg-primary: #000c18;
+    --bg-primary-layer-one: #171f2f;
+    --bg-primary-layer-one-hover: #08286b;
 
-    --tc-primary: var(--color-gray-900);
-    --tc-primary-inverse: var(--color-white-100);
-    --tc-primary-layer-one-hover: var(--color-white-100);
+    --tc-primary: var(--color-white-100);
+    --tc-primary-inverse: yellowgreen;
+    --tc-primary-layer-one-hover: var(--color-yellow);
 
-    --bg-button-primary: var(--color-blue-700);
+    --border-primary: var(--color-gray-100);
+
+    --bg-button-primary: #051336;
+    --bg-button-primary-hover: #0a2363;
+
+    --bs-small: var(--bs-color-white-10) 0px 1px 3px 0px,
+      var(--bs-color-white-06) 0px 1px 2px 0px;
   }
 }

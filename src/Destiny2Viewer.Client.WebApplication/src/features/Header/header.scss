@@ -1,0 +1,58 @@
+.d2-header {
+  text-align: center;
+}
+
+.d2-navbar-container {
+  padding-inline: 1rem;
+}
+
+.d2-navbar {
+  line-height: 2.5rem;
+}
+
+.d2-menubar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.auth-menubar {
+  grid-column: 2 / -1;
+  justify-self: end;
+  list-style-type: none;
+
+  & button {
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: var(--bg-button-primary);
+    color: var(--tc-primary-inverse);
+    cursor: pointer;
+  }
+
+  & button:hover {
+    background-color: var(--bg-button-primary-hover);
+  }
+}
+
+.animation .auth-menubar button {
+  transition: background-color 0.2s ease-in;
+}
+
+.main-menubar {
+  grid-column: 1 / 2;
+  list-style-type: none;
+  display: flex;
+
+  a {
+    font-size: 0.9rem;
+  }
+
+  & li {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-inline-end: 1rem;
+    }
+  }
+}
