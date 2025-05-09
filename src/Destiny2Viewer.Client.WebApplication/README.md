@@ -1,9 +1,53 @@
+[Architecture](#architecture)
+- [Architecture](#architecture)
+  - [🖼️ Presentation Layer](#️-presentation-layer)
+  - [💽 API Layer / State Management (Infrastructure Layer)](#-api-layer--state-management-infrastructure-layer)
+  - [🏢 Application Layer](#-application-layer)
+  - [🧬 Domain Layer](#-domain-layer)
+    - [Architecture Overview](#architecture-overview)
+- [Authentication vs Authorization](#authentication-vs-authorization)
+      - [🪪  `Authentication`](#--authentication)
+      - [🚓 `Authorization`](#-authorization)
+  - [Problem](#problem)
+    - [`Solution`](#solution)
+    - [`Interactive Proof`](#interactive-proof)
+  - [`How to implement this:`](#how-to-implement-this)
+  - [🔐 Zero-Knowledge Password Login Protocol](#-zero-knowledge-password-login-protocol)
+    - [Login Flow](#login-flow)
+    - [🎯 Key Concepts](#-key-concepts)
+  - [📝 Zero-Knowledge Password Registration Protocol](#-zero-knowledge-password-registration-protocol)
+    - [Registration Flow](#registration-flow)
+    - [🔐 Why This Is Secure](#-why-this-is-secure)
+
+# Architecture
+
+## 🖼️ Presentation Layer
+- Render Response ViewModels
+
+## 💽 API Layer / State Management (Infrastructure Layer)
+- Caching
+- Local Storage
+- IndexDB
+- Data Fetching
+
+## 🏢 Application Layer
+- Logic Handlers
+- Model Mappers
+- Model Validators
+
+## 🧬 Domain Layer
+- Entities
+- Value Objects
+
+### Architecture Overview
+![Architecture-Overview](./docs/FE_Architecture.png)
+
 # Authentication vs Authorization
 
-#### `Authentication`
+#### 🪪  `Authentication`
 > Authenticatiton is the process of determining if you are, who you say you are. 
 
-#### `Authorization`
+#### 🚓 `Authorization`
 > Authorization is the process of determinintig what resources an Authenticated Client has permission to access.
 
 ## Problem
