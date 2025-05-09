@@ -1,0 +1,14 @@
+@use "./props-mixin";
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include props-mixin.theme-colors($theme: Dark);
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include props-mixin.theme-colors($theme: Light);
+  }
+}

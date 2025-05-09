@@ -1,0 +1,47 @@
+@mixin theme-colors($theme: Light) {
+  @if ($theme == Light) {
+    --bg-primary: var(--color-white-100);
+    --bg-primary-layer-one: var(--color-white);
+    --bg-primary-layer-one-hover: var(--color-blue-600);
+
+    --tc-primary: var(--color-gray-900);
+    --tc-primary-inverse: var(--color-white-100);
+    --tc-primary-layer-one-hover: var(--color-white-100);
+
+    --border-primary: var(--color-gray-200);
+
+    --bg-button-primary: var(--color-blue-700);
+
+    --bs-small: var(--bs-color-dark-10) 0px 1px 3px 0px,
+      var(--bs-color-dark-06) 0px 1px 2px 0px;
+  }
+
+  @if ($theme == Dark) {
+    --bg-primary: var(--color-black-900);
+    --bg-primary-layer-one: var(--color-gray-900);
+    --bg-primary-layer-one-hover: var(--color-blue-600);
+
+    --tc-primary: var(--color-white-200);
+    --tc-primary-inverse: var(--color-gray-900);
+    --tc-primary-layer-one-hover: var(--color-white-200);
+
+    --border-primary: var(--color-gray-100);
+
+    --bg-button-primary: var(--color-yellow);
+
+    --bs-small: var(--bs-color-white-10) 0px 1px 3px 0px,
+      var(--bs-color-white-06) 0px 1px 2px 0px;
+  }
+
+  @if ($theme == Midnight) {
+    --bg-primary: var(--color-white-100);
+    --bg-primary-layer-one: var(--color-white);
+    --bg-primary-layer-one-hover: var(--color-blue-600);
+
+    --tc-primary: var(--color-gray-900);
+    --tc-primary-inverse: var(--color-white-100);
+    --tc-primary-layer-one-hover: var(--color-white-100);
+
+    --bg-button-primary: var(--color-blue-700);
+  }
+}

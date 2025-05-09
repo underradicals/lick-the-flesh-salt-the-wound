@@ -1,0 +1,46 @@
+@use "./props-mixin";
+
+:root {
+  /* -------------------------- Colors ------------------------------ */
+  /* Blacks */
+  --color-black: black;
+  --color-black-900: #181818;
+
+  /* Grays */
+  --color-gray-900: #1f1f1f;
+  --color-gray-700: #616161;
+  --color-gray-500: #778899;
+  --color-gray-200: #d6d6d6;
+  --color-gray-100: #d4d4d436;
+
+  /* Whites */
+  --color-white: #ffffff;
+  --color-white-100: #f8f8f8;
+  --color-white-200: #e2f1f6;
+
+  /* Blues */
+  --color-blue: blue;
+  --color-blue-700: #015fb8;
+  --color-blue-600: #0078d4;
+
+  /* Yellows */
+  --color-yellow: #ffff00;
+
+  --bs-color-white-10: rgba(238, 238, 238, 0.1);
+  --bs-color-white-06: rgba(238, 238, 238, 0.06);
+  --bs-color-dark-10: rgba(0, 0, 0, 0.1);
+  --bs-color-dark-06: rgba(0, 0, 0, 0.06);
+}
+
+/* -------------------------- Themes ------------------------------ */
+:root {
+  @include props-mixin.theme-colors($theme: Light);
+}
+
+[data-theme="dark"] {
+  @include props-mixin.theme-colors($theme: Dark);
+}
+
+[data-theme="midnight"] {
+  @include props-mixin.theme-colors($theme: Midnight);
+}
