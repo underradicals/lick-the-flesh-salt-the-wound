@@ -80,20 +80,20 @@ function HandleAccessibilityNavigation(event: Event) {
   }
 }
 
-function handleOutsideClickEvent(button_selector: string, menu_selector: string) {
-  return (event: Event) => {
-    const target = event.target as HTMLElement;
-    const MenuItemsContainer = select(menu_selector);
-    console.log(target.className);
-    if (
-      target.className === button_selector.replace(".", "") ||
-      target.className === menu_selector.replace(".", "")) {
-      return;
-    }
+// function handleOutsideClickEvent(button_selector: string, menu_selector: string) {
+//   return (event: Event) => {
+//     const target = event.target as HTMLElement;
+//     const MenuItemsContainer = select(menu_selector);
+//     console.log(target.className);
+//     if (
+//       target.className === button_selector.replace(".", "") ||
+//       target.className === menu_selector.replace(".", "")) {
+//       return;
+//     }
 
-    MenuItemsContainer?.removeAttribute("open");
-  }
-}
+//     MenuItemsContainer?.removeAttribute("open");
+//   }
+// }
 
 /**
  * @description This controls the toggle of the Theme Switch Component.
@@ -115,5 +115,5 @@ export default function ColorThemeSwitch(button_selector: string, menu_selector:
   ColorThemeButton.addEventListener('click', ColorThemeClickEvent);
   MenuItemsContainer?.addEventListener("click", ChangeColorThemeEvent);
   MenuItemsContainer?.addEventListener('keyup', HandleAccessibilityNavigation);
-  addEventListener('click', handleOutsideClickEvent(button_selector, menu_selector));
+  // addEventListener('click', handleOutsideClickEvent(button_selector, menu_selector));
 }
