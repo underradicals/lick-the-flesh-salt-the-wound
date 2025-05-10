@@ -1,13 +1,98 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destiny2 App | HOME</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="d2-header">
+      <h1 class="h1 d2-brand-name">Destiny2 App</h1>
+    </header>
+    <section class="animation d2-navbar-container">
+      <nav class="d2-navbar">
+        <div class="d2-menubar">
+          <ul class="main-menubar">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+          <ul class="auth-menubar">
+            <li>
+              <button>Login</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <div class="drop-down-menu-container">
+      <button class="drop-down-menu-button" data-target="#ddm1">
+        <span>
+          Color Theme
+        </span>
+        <span class="chevron-entity">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+            <path
+              d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+          </svg>
+        </span>
+      </button>
+      <article id="ddm1" class="drop-down-menu">
+        <p data-target="html" tabindex="0">Light</p>
+        <p data-target="html" tabindex="0">Dark</p>
+        <p data-target="html" tabindex="0">Midnight</p>
+        <hr class="divide">
+        <p data-target="html" tabindex="0">System</p>
+      </article>
+    </div>
+    <section class="form-group">
+      <div class="xclose-topbar">
+        <p class="xclose" title="Delete this message">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+          </svg>
+        </p>
+      </div>
+      <article class="form-group-message-container">
+        <p class="form-group-message">This is not your typical form. Here are
+          some of the benefits:
+        </p>
+        <ul class="form-group-message-points">
+          <li tabindex="0">It uses a very simplified version of ZKP.</li>
+          <li tabindex="0">As long as you use the same password every time you log in, the login will succeed.</li>
+          <li tabindex="0"> There is no need to register.</li>
+          <li tabindex="0">Neither your email nor your password is persisted.</li>
+        </ul>
+      </article>
+      <form method="post">
+        <div class="form-item">
+          <label class="form-item-label" for="username">Username</label>
+          <input class="form-item-input" type="text" name="username" id="username">
+        </div>
+        <div class="form-item">
+          <label class="form-item-label" for="email">Email</label>
+          <input class="form-item-input" type="text" name="email" id="email">
+        </div>
+        <div class="form-item">
+          <label class="form-item-label" for="password">Password</label>
+          <input class="form-item-input" type="text" name="password" id="password">
+        </div>
+        <button class="form-group-submit" type="submit">Submit</button>
+      </form>
+    </section>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

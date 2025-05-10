@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  background-color: var(--bg-primary);
+}
+
+html,
+body,
+a {
+  text-decoration: none;
+  color: var(--tc-primary);
+}
+
+hr.divide {
+  margin-inline: 0.5rem;
+  margin-block: 4px;
+  border: 1px solid var(--border-primary);
+}
+
+.h1 {
+  font-weight: 300;
+}
