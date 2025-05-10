@@ -74,7 +74,7 @@
     place-self: center;
     width: 20px;
     height: 20px;
-    transform: translateY(2px);
+    transform: translateY(2px) translateX(0.5px);
     fill: var(--tc-primary);
   }
 }
