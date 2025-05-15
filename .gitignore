@@ -6,3 +6,10 @@
 # .NET Framework 
 obj/
 bin/
+
+Data/
+
+src/Playground/
+src/Destiny2Viewer.Manifest.Ingestion/
+
+*.db

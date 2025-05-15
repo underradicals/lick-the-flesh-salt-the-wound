@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Destiny2App.Client.WebApi",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Destiny2Viewer.Client.ControllerWebApi", "src\Destiny2Viewer.Client.ControllerWebApi\Destiny2Viewer.Client.ControllerWebApi.csproj", "{87F5B0ED-49A2-407A-96D0-8ED6473556D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Destiny2Viewer.Manifest.Ingestion", "src\Destiny2Viewer.Manifest.Ingestion\Destiny2Viewer.Manifest.Ingestion.csproj", "{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "src\Playground\Playground.csproj", "{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,30 @@ Global
 		{87F5B0ED-49A2-407A-96D0-8ED6473556D0}.Release|x64.Build.0 = Release|Any CPU
 		{87F5B0ED-49A2-407A-96D0-8ED6473556D0}.Release|x86.ActiveCfg = Release|Any CPU
 		{87F5B0ED-49A2-407A-96D0-8ED6473556D0}.Release|x86.Build.0 = Release|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Debug|x64.Build.0 = Debug|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Debug|x86.Build.0 = Debug|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Release|x64.ActiveCfg = Release|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Release|x64.Build.0 = Release|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Release|x86.ActiveCfg = Release|Any CPU
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC}.Release|x86.Build.0 = Release|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Debug|x64.Build.0 = Debug|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Debug|x86.Build.0 = Debug|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Release|x64.ActiveCfg = Release|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Release|x64.Build.0 = Release|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{FBA45FB3-8546-4DFF-ACAC-17C658B328FF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +78,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{87F5B0ED-49A2-407A-96D0-8ED6473556D0} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{A7AAD7B4-3D1F-4F09-864B-EA92FD919D1C} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{5F50B666-F438-4AF3-908D-DEC95DAD7FFC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal
