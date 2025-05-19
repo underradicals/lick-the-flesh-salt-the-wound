@@ -13,3 +13,6 @@ src/Playground/
 src/Destiny2Viewer.Manifest.Ingestion/
 
 *.db
+
+*.db-shm
+*.db-wal
