@@ -3,11 +3,46 @@
 -- Drop Tables
 drop view if exists target.WeaponStatView;
 drop table if exists target.WeaponStats;
+drop table if exists target.PlugSetHashSockets;
+drop table if exists target.WeaponPlugSetHashes;
+drop table if exists target.CuratedRolls;
+drop table if exists target.Sockets;
 drop table if exists target.Weapons;
 drop table if exists target.Stats;
 
 
 -- Create Tables
+create table if not exists target.Sockets (
+    id integer not null ,
+    name text not null ,
+    description text not null ,
+    display_name text not null ,
+    tier_type text not null ,
+    icon_url text not null ,
+    tooltip jsonb not null,
+    constraint pk_sockets_id primary key (id)
+);
+
+create index if not exists target.idx_sockets_name on Sockets (name);
+create index if not exists target.idx_sockets_display_name on Sockets (display_name);
+create index if not exists target.idx_sockets_tier_type on Sockets (tier_type);
+
+insert into target.Sockets (id, name, description, display_name, tier_type, icon_url, tooltip)
+with socket_cte as (
+    select 'displayProperties' as DisplayProperties
+)
+select
+    json -> 'hash' as Id,
+    json -> DisplayProperties ->> 'name' as Name,
+    json -> DisplayProperties ->> 'description' as Description,
+    json ->> 'itemTypeDisplayName' as DisplayName,
+    coalesce(json -> 'inventory' ->> 'tierTypeName', '') as TierType,
+    coalesce(json -> DisplayProperties ->> 'icon', '') as IconUrl,
+    json -> 'tooltipNotifications' as ToolTip
+from DestinyInventoryItemDefinition, socket_cte where json ->> 'itemType' = 19 and Name is not '';
+
+
+
 create table if not exists target.Weapons
 (
     id              integer not null,
@@ -119,7 +154,7 @@ create index target.idx_stats_icon on Stats (icon);
 create index target.idx_stats_category on Stats (category);
 create index target.id_stats_type on Stats (type);
 
-Insert into Stats (id, name, icon, category, type, description)
+Insert into target.Stats (id, name, icon, category, type, description)
 select json ->> 'hash'                                       as Id,
        json ->> 'displayProperties' ->> 'name'               as Name,
        coalesce(json ->> 'displayProperties' ->> 'icon', '') as Icon,
@@ -150,7 +185,7 @@ CREATE TABLE IF NOT EXISTS target.WeaponStats
     constraint pk_weapon_stats_id primary key (WeaponId, StatId)
 );
 
-insert into WeaponStats (WeaponId, StatId, Value)
+insert into target.WeaponStats (WeaponId, StatId, Value)
 with cte as (select DestinyInventoryItemDefinition.json ->> 'hash' as Id,
                     json_each.value
              from DestinyInventoryItemDefinition, json_each(DestinyInventoryItemDefinition.json, '$.investmentStats')
@@ -160,6 +195,52 @@ select Id,
        cte.value ->> 'value'        as Value
 from cte
 order by Id;
+
+
+create table if not exists target.PlugSetHashSockets (
+    plug_set_id integer not null,
+    socket_id integer not null,
+    constraint fk_plug_set_hash_id foreign key (socket_id) references Sockets (id),
+    constraint pk_plug_set_hash_sockets primary key (plug_set_id, socket_id)
+);
+
+insert into target.PlugSetHashSockets (plug_set_id, socket_id)
+with cte as (select DestinyPlugSetDefinition.id as PlugSetHash, value as json
+             from DestinyPlugSetDefinition, json_each(DestinyPlugSetDefinition.json ->> 'reusablePlugItems'))
+select distinct PlugSetHash, json ->> 'plugItemHash' as SocketId from cte;
+
+create table if not exists target.WeaponPlugSetHashes (
+    weapon_id integer not null ,
+    plug_set_hash integer not null ,
+    constraint fk_socket_plugsets_weapon_id foreign key (weapon_id) references Weapons (id),
+    constraint fk_socket_plugsets_plug_set_hash foreign key (plug_set_hash) references PlugSetHashSockets(plug_set_id),
+    constraint pk_socket_plugsets_weapon_id primary key (weapon_id, plug_set_hash)
+);
+
+insert into target.WeaponPlugSetHashes (weapon_id, plug_set_hash)
+select diid.id, value
+from DestinyInventoryItemDefinition as diid,
+     json_tree(diid.json ->> 'sockets' ->> 'socketEntries') as jt
+where diid.json ->> 'itemType' = 3 and
+      (key = 'reusablePlugSetHash' or key = 'randomizedPlugSetHash');
+
+
+Create table if not exists target.CuratedRolls (
+    weapon_id integer not null,
+    socket_id integer not null,
+    constraint fk_curated_rolls_weapon_id foreign key (weapon_id) references Weapons (id),
+    constraint fk_curated_rolls_socket_id foreign key (socket_id) references Sockets (id),
+    constraint pk_curated_rolls primary key (weapon_id, socket_id)
+);
+
+
+insert into target.CuratedRolls (weapon_id, socket_id)
+select distinct diid.id as WeaponId,
+       value   as SocketId
+from DestinyInventoryItemDefinition as diid,
+     json_tree(diid.json ->> 'sockets' ->> 'socketEntries') as jt
+where diid.json ->> 'itemType' = 3
+  and key = 'singleInitialItemHash';
 
 
 -- Update Tables
