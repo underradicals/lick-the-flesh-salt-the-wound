@@ -1,5 +1,5 @@
 using Destiny2App.Client.WebApi.ApplicationServices;
-using Destiny2App.Client.WebApi.ApplicationServices.ConfigurationSecrets;
+using Destiny2App.Client.WebApi.ApplicationServices.ConfigurationSecrets;using Destiny2App.Client.WebApi.Features.WeaponPage;
 using Destiny2Viewer.Client.MinimalWebApi.Ingestion;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -47,7 +47,6 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.MapGet("/job", () => "Hello World!")
-    .WithName("Hangfire");
+_ = new WeaponPageEndpoint(app);
 
 app.Run();
